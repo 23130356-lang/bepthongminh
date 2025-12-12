@@ -34,28 +34,27 @@
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
 
-        <!-- 4. Thư viện JPA (Để làm việc với Database/DAO) -->
+        <!-- 4. Thư viện JPA (Tương tác cơ sở dữ liệu) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
-        <!-- 5. Driver MySQL (Để kết nối CSDL MySQL) -->
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <scope>runtime</scope>
-        </dependency>
-
-        <!-- 6. DevTools (Tự động tải lại server khi sửa code - Tiện lợi) -->
+        <!-- ********** BỔ SUNG QUAN TRỌNG CHO BẢO MẬT ********** -->
+        <!-- 5. Thư viện Spring Security (Bảo mật, xác thực người dùng, Form Login) -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <scope>runtime</scope>
-            <optional>true</optional>
+            <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
 
-        <!-- 7. Lombok (Giúp viết code gọn hơn: @Getter, @Setter) -->
+        <!-- 6. Thư viện Thymeleaf Extras cho Spring Security (Dùng cú pháp bảo mật trong HTML) -->
+        <dependency>
+            <groupId>org.thymeleaf.extras</groupId>
+            <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+        </dependency>
+        <!-- ******************************************************* -->
+
+        <!-- 7. Thư viện Lombok (Giảm code boilerplate) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -68,17 +67,20 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-core -->
+
+        <!-- 9. Thư viện MySQL Driver -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <!-- Phiên bản được giữ nguyên theo cấu hình cũ của bạn -->
+            <version>9.5.0</version>
+        </dependency>
+
+        <!-- 10. Thư viện JDBI (Nếu bạn vẫn muốn dùng song song với JPA) -->
         <dependency>
             <groupId>org.jdbi</groupId>
             <artifactId>jdbi3-core</artifactId>
             <version>3.51.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
-        <dependency>
-            <groupId>com.mysql</groupId>
-            <artifactId>mysql-connector-j</artifactId>
-            <version>9.5.0</version>
         </dependency>
     </dependencies>
 
